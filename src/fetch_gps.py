@@ -4,6 +4,7 @@ from datetime import datetime
 import requests
 import io
 
+
 def read_and_filter_gps(
     url: str = "https://transport.tallinn.ee/gps.txt",
     line_number: int = 8,
