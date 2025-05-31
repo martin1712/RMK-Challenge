@@ -1,0 +1,8 @@
+# HTTP requests to fetch live bus data
+requests
+
+# Numerical computations & triangular‐jitter sampling
+numpy
+
+# Plotting
+matplotlib
