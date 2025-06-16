@@ -13,8 +13,8 @@ def _find_catchable_bus(arrive_zoo: datetime,
                         trips: List[Tuple[datetime, datetime]]) -> Tuple[datetime, datetime, float]:
     """
     Among the scheduled (sched_dep, sched_arr) in `trips`, add a random
-    triangular jitter to each sched_dep.  Return the first (actual_dep, sched_arr, base_ride)
-    such that actual_dep >= arrive_zoo.  If none qualifies, fall back to the last trip (forcing lateness).
+    triangular jitter to each sched_dep. Return the first (actual_dep, sched_arr, base_ride)
+    such that actual_dep >= arrive_zoo. If none qualifies, fall back to the last trip (forcing lateness).
 
     Returns:
       (bus_dep_actual, scheduled_arrival, base_ride_seconds)
@@ -94,11 +94,9 @@ class Simulator:
         bus_arrival = bus_dep_actual + timedelta(seconds=ride_dur)
 
         # 4) Final walk with triangular jitter
-        final_walk_jitter = np.random.triangular(
-            -WALK_VARIABILITY_SECONDS,
-            0,
-            WALK_VARIABILITY_SECONDS
-        )
+        final_walk_jitter = np.random.triangular(-WALK_VARIABILITY_SECONDS,
+                                                 0,
+                                                 WALK_VARIABILITY_SECONDS)
         arrival = bus_arrival + timedelta(seconds=self.walk_office + final_walk_jitter)
 
         # 5) Compute lateness in seconds (clamped at zero)

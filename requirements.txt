@@ -1,8 +1,11 @@
 # HTTP requests to fetch live bus data
-requests
+requests~=2.32.4
 
 # Numerical computations & triangular‐jitter sampling
-numpy
+numpy~=2.2.5
 
 # Plotting
-matplotlib
+matplotlib~=3.10.3
+
+resync-simulator~=1.1.0
+pandas~=2.2.3

@@ -14,15 +14,13 @@ from config import BUS_TRAVEL_BASE_SECONDS, BUS_TRAVEL_VARIABILITY_SECONDS
 _MIN_TRAVEL_SECONDS = BUS_TRAVEL_BASE_SECONDS - BUS_TRAVEL_VARIABILITY_SECONDS
 
 
-def pair_departure_and_destination(
-        departure_arrivals: List[datetime],
-        destination_arrivals: List[datetime]
-) -> List[Tuple[datetime, datetime]]:
+def pair_departure_and_destination(departure_arrivals: List[datetime],
+                                   destination_arrivals: List[datetime]) -> List[Tuple[datetime, datetime]]:
     """
     Pair each departure‐stop arrival with the earliest “destination” arrival that
     is both ≥ departure_time AND at least _MIN_TRAVEL_SECONDS later.
 
-    Both input lists must be sorted ascending.  We walk through both lists
+    Both input lists must be sorted ascending. We walk through both lists
     in one pass (two‐pointer logic):
       - Let i index departure_arrivals, j index destination_arrivals.
       - While i < len(departure_arrivals) and j < len(destination_arrivals):

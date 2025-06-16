@@ -40,9 +40,9 @@ BUS_TRAVEL_BASE_SECONDS = 720  # 12 minutes
 # │                        Simulation Time Window                             │
 # └───────────────────────────────────────────────────────────────────────────┘
 # When to start checking departures (local time)
-START_TIME = time(hour=17, minute=42)
+START_TIME = time(hour=20, minute=15)
 # Deadline for arriving (local time)
-MEETING_TIME = time(hour=18, minute=42)
+MEETING_TIME = time(hour=21, minute=15)
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
 # │                        Monte Carlo Parameters                             │
